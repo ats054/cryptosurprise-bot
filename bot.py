@@ -1,9 +1,8 @@
-
 import os
 import json
 import random
 from datetime import datetime, timedelta
-from telegram import Update, ReplyKeyboardMarkup
+from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from dotenv import load_dotenv
 
@@ -34,6 +33,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         }
         save_data(USERS_FILE, users)
     await update.message.reply_text("🎁 Welcome to CryptoSurprise!\nType /open to open your daily box.")
+
 async def open_box(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.effective_user.id)
     users = load_data(USERS_FILE)
@@ -51,8 +51,7 @@ async def open_box(update: Update, context: ContextTypes.DEFAULT_TYPE):
     users[user_id]["boxes_opened"] += 1
     save_data(USERS_FILE, users)
 
-    await update.message.reply_text(f"🎉 You got: {prize['text']}
-💰 SurpriseCoins: +{prize['coins']}")
+    await update.message.reply_text(f"🎉 You got: {prize['text']}!\n💰 SurpriseCoins: +{prize['coins']}")
 
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
