@@ -33,9 +33,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "boxes_opened": 0
         }
         save_data(USERS_FILE, users)
-    await update.message.reply_text("🎁 Welcome to CryptoSurprise!
-Type /open to open your daily box.")
-
+    await update.message.reply_text("🎁 Welcome to CryptoSurprise!\nType /open to open your daily box.")
 async def open_box(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.effective_user.id)
     users = load_data(USERS_FILE)
