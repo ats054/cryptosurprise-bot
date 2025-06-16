@@ -1,0 +1,26 @@
+{
+  "prizes": [
+    {
+      "text": "1 satoshi! Just kidding. But here's a coin.",
+      "coins": 1
+    },
+    {
+      "text": "Lucky laugh! \ud83d\ude02",
+      "coins": 2
+    },
+    {
+      "text": "You found a Rare Crypto Sticker!",
+      "coins": 5
+    },
+    {
+      "text": "0.00001 BTC \ud83d\udcb8 (imaginary)",
+      "coins": 10
+    }
+  ],
+  "weights": [
+    60,
+    25,
+    10,
+    5
+  ]
+}
